@@ -1,2 +1,2 @@
-# okode-browser-sqlite
+# Okode Browser SQLite
 Okode Browser Support for SQLite
