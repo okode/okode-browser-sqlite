@@ -34,8 +34,10 @@ class SQLiteObjectBrowser extends SQLiteObject {
 
 export class SQLiteBrowser extends SQLite {
 
+  static readonly DATABASE = new Database();
+
   create(config: SQLiteDatabaseConfig): Promise<SQLiteObject> {
-    return new Promise((resolve, reject) => { resolve(new SQLiteObjectBrowser(new Database())); });
+    return new Promise((resolve, reject) => { resolve(new SQLiteObjectBrowser(SQLiteBrowser.DATABASE)); });
   }
 
   echoTest(): Promise<any> {

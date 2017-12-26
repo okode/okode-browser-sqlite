@@ -50,7 +50,7 @@ var SQLiteBrowser = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     SQLiteBrowser.prototype.create = function (config) {
-        return new Promise(function (resolve, reject) { resolve(new SQLiteObjectBrowser(new Database())); });
+        return new Promise(function (resolve, reject) { resolve(new SQLiteObjectBrowser(SQLiteBrowser.DATABASE)); });
     };
     SQLiteBrowser.prototype.echoTest = function () {
         return new Promise(function (resolve, reject) { resolve(); });
@@ -58,6 +58,7 @@ var SQLiteBrowser = (function (_super) {
     SQLiteBrowser.prototype.deleteDatabase = function (config) {
         return new Promise(function (resolve, reject) { resolve(); });
     };
+    SQLiteBrowser.DATABASE = new Database();
     return SQLiteBrowser;
 }(SQLite));
 export { SQLiteBrowser };
