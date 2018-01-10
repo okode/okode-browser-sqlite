@@ -44,7 +44,7 @@ class SQLiteObjectBrowser extends SQLiteObject {
       let sqlStatement = sqlStatements[i];
       let params: any[] = [];
       let query = null;
-      if (sqlStatement instanceof String) {
+      if (typeof sqlStatement == 'string') {
         query = sqlStatement as string;
       } else if (sqlStatement instanceof Array) {
         /**
@@ -52,7 +52,7 @@ class SQLiteObjectBrowser extends SQLiteObject {
          */
         let queryPos = 0, paramsPos = 1;
         let querys = sqlStatement as Array<any>;
-        if (querys.length > 0 && querys[queryPos] instanceof String) {
+        if (querys.length > 0 && typeof querys[queryPos] == 'string') {
           // Looking for the query
           query = querys[queryPos] as string;
         }
