@@ -100,13 +100,13 @@ var SQLiteObjectBrowser = (function (_super) {
                         sqlStatement = sqlStatements[i];
                         params = [];
                         query = null;
-                        if (sqlStatement instanceof String) {
+                        if (typeof sqlStatement == 'string') {
                             query = sqlStatement;
                         }
                         else if (sqlStatement instanceof Array) {
                             queryPos = 0, paramsPos = 1;
                             querys = sqlStatement;
-                            if (querys.length > 0 && querys[queryPos] instanceof String) {
+                            if (querys.length > 0 && typeof querys[queryPos] == 'string') {
                                 // Looking for the query
                                 query = querys[queryPos];
                             }
